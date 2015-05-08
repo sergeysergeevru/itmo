@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Hello App Engine</title>
+    <script src="jquery.js"></script>
+    <script>
+    $(document).ready(function() {
+    	$('#near10').on('click',function(){
+    		var N = $("#Mnumb").val();
+    		var M = $("#Nnumb").val();
+    		$('#res1').load( "/project3?N="+N+"&M="+M);
+    	});
+    	$('#Equal').on('click',function(){
+    		var A = $("#Anumb").val();
+    		var B = $("#Bnumb").val();
+    		var C = $("#Cnumb").val();
+    		$('#res2').load( "/test?A="+A+"&B="+B+"&C="+C);
+    	});
+    	$('#Random1').on('click',function(){
+    		$('#res3').load( "/array1");
+    	});
+    	$('#Array').on('click',function(){
+    		$('#res4').load( "/array2");
+    	});
+    });
+    </script>
+    <style>
+    .answer_random{
+    	background-color:#00ff00;
+    	color:red;
+    	}
+    .first{
+    width:450px;
+    background-color:#00FA00;
+    padding:10px;
+    margin:5px;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <span class="answer_random"></span>
+    <form>
+    <div class="first">
+    Ближайшее к 10
+    <hr>
+    <input type="text" id="Mnumb" placeholder="Число M">
+    <input type="text" id="Nnumb" placeholder="Число N">
+    <input type="button" id="near10" value="ted">
+    <span id="res1"></span>
+    </div>
+    <div class="first">
+    Квадратное уравнение
+    <hr>
+    <input type="text" id="Anumb" placeholder="a" style="width:40px">x^2+
+    <input type="text" id="Bnumb" placeholder="b" style="width:40px">x+
+    <input type="text" id="Cnumb" placeholder="c" style="width:40px">=0
+    <input type="button" id="Equal" value="ted">
+    <span id="res2"></span>
+    </div>
+    <div class="first">
+    Random array
+    <hr>
+    <input type="button" id="Random1" value="ted">
+    <span id="res3"></span>
+    </div>
+    <div class="first">
+    Random array + max
+    <hr>
+    <input type="button" id="Array" value="ted">
+    <span id="res4"></span>
+    </div>
+    </form>
+  </body>
+</html>
