@@ -1,0 +1,37 @@
+<html>
+<head><title></title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<style>
+#content{
+width:800px;
+margin:auto;
+padding-top:10px;
+}
+</style>
+<script src="jquery.js"></script>
+    <script>
+    $(document).ready(function() {
+    	$('#GTable1').on('click',function(){
+    		$('#result').load( "/utfTable?start="+ $("#start").val()+"&finish="+$("#finish").val());
+    	});
+    	$('#GTable2').on('click',function(){
+    		$('#result').load( "/hexUtfTable?start="+$("#start").val()+"&finish="+$("#finish").val());
+    	});
+    });
+    </script>
+</head>
+<body>
+<div id="content">
+<div class="hero-unit">
+<form>
+<input type="text" id="start" placeholder="Start char"><input type="text" id="finish" placeholder="Finish char"><br>
+<input type="button" id="GTable1" value="Generate table" class="btn btn-warning">
+<input type="button" id="GTable2" value="Generate table with HEX" class="btn btn-warning">
+</form>
+</div>
+<div id="result">
+
+</div>
+</div>
+</body>
+</html>
